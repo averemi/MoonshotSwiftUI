@@ -9,14 +9,14 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        GeometryReader { geo in
-            Image("conrad")
-                .resizable()
-                .scaledToFit()
-                .frame(width: geo.size.width * 0.8, height: 300)
-        //        .clipped()
-            // If you ever want to center a view inside a GeometryReader, rather than aligning to the top-left corner, add a second frame that makes it fill the full space of the container, like this
-            // .frame(width: geo.size.width, height: geo.size.height)
+        ScrollView {
+            VStack(spacing: 10) {
+                ForEach(0..<100) {
+                    Text("Item: \($0)")
+                        .font(.title)
+                }
+            }
+            .frame(maxWidth: .infinity)
         }
     }
 }
