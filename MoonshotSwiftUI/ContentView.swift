@@ -9,14 +9,14 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        ScrollView {
-            LazyVStack(spacing: 10) {
-                ForEach(0..<100) {
-                    CustomText("Item: \($0)")
-                        .font(.title)
-                }
+        NavigationView {
+            NavigationLink {
+                Text("Detail View")
+            } label: {
+                Text("Hello, world!")
+                    .padding()
             }
-            .frame(maxWidth: .infinity)
+            .navigationTitle("SwiftUI")
         }
     }
 }
@@ -24,18 +24,5 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
-    }
-}
-
-struct CustomText: View {
-    let text: String
-
-    var body: some View {
-        Text(text)
-    }
-    
-    init(_ text: String) {
-        print("Creating a new CustomText")
-        self.text = text
     }
 }
