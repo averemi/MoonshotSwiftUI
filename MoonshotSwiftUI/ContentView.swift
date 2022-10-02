@@ -10,11 +10,13 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         NavigationView {
-            NavigationLink {
-                Text("Detail View")
-            } label: {
-                Text("Hello, world!")
-                    .padding()
+            List(0..<100) { row in
+                NavigationLink {
+                    Text("Detail \(row)")
+                } label: {
+                    Text("Row \(row)")
+                        .padding()
+                }
             }
             .navigationTitle("SwiftUI")
         }
