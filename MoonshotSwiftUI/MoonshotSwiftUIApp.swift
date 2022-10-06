@@ -11,7 +11,7 @@ import SwiftUI
 struct MoonshotSwiftUIApp: App {
     var body: some Scene {
         WindowGroup {
-            GalleryView()
+            MoonshotView()
         }
     }
 }
